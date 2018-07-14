@@ -24,38 +24,35 @@ const init = async () => {
         method: function (request, h) {
             console.log('onRequest');
             const segment = new AWSXRay.Segment('seg-1');
+            request.segment = segment;
             const ns = AWSXRay.getNamespace();
-            ns.run(() => {
-                AWSXRay.setSegment(segment);
-                request.segment = segment;
-                // return new Promise(resolve => {
-                //     request.closeSegment = () => {
-                //         console.log('closing segment');
-                //         segment.close();
-                //         resolve();
-                //     };
-                // });
-            });
+            const context = ns.createContext();
+            ns.enter(context);
+            request.xrayContext = context;
+            AWSXRay.setSegment(segment);
             return h.continue;
         }
     });
 
     server.events.on('response', function (request, h) {
-            console.log('response');
-            if(request.closeSegment) {
-                request.closeSegment();
-            }
-            if(request.segment) {
-                request.segment.close();
-            }
+        console.log('response');
+        if(request.closeSegment) {
+            request.closeSegment();
         }
-    );
+        if(request.segment) {
+            request.segment.close();
+        }
+        if(request.xrayContext) {
+            const ns = AWSXRay.getNamespace();
+            ns.exit(request.xrayContext);
+        }
+    });
 
     server.route({
         method: 'GET',
         path: '/',
         handler: async (request, h) => {
-            console.log('in handler');
+            console.log('in handler', AWSXRay);
             const identity = await sts.getCallerIdentity({})
                 .promise();
             return h.response(identity);

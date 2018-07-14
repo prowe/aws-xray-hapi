@@ -8,7 +8,12 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/server.js"
+            "program": "${workspaceFolder}/server.js",
+            "env": {
+                "AWS_ACCESS_KEY_ID":"ASIA2TRLCGBM3BYQSUFC",
+                "AWS_SECRET_ACCESS_KEY":"ZVln1njntlT4GgheO2WWDneiim2V9xNOOdbFj9fu",
+                "AWS_SESSION_TOKEN":"AgoGb3JpZ2luEKb//////////wEaCXVzLWVhc3QtMSKAAgAuc9x6pmgRvn7Q6s4d7G0Zy+/1Cj3h6LqxmRtsdTiNMhOpHRz5nyYJUBovuypbxV45M8uCuAmB3HqKLXcUFsrE06oFqyc21asJshVAZ6R7gJMhSNlbj/Z7MeezWIoF6e6sZJuSexVyi/eHiNtYwa2HQ3s7DoMYVWNkRl0zrn44UXN+EzUdrWRlBhOTtMBoBeEV9WxDb52BUC+qyiFdu/9zbw/OB7TyyshH0aCILm6WHsy0h0gFZ/dkxkeMbaNOEBrxK+5g3Wpk+9gpm271ClkyL1uuVuLGAawjJO+d/+ytBri4iWs1NEZI9hTY1LUg7j+se/NGIi2VgXHQckVKl7oqigUIaxAAGgw3MjkxNjEwMTk0ODEiDCiuy53+jRr/GrA6xirnBGYq+DQ3VUrIuWfL1tzUxj+KpjpnGULaQR1MD+VIDPV2u6+VBVHIlsmlB5yrbKmH7NqpLu0epXaMZYQQZyNxIGv0wiL31rOBfHb3qfDBN11Iprjj9QAs2FIbvLyENZ/f3tStYl2190AVDch534gWCdJz/DWfojJixb37IsQJgZnCpt7yvhtqbzX5TUJvfkqpSeTHNmVtrlLB+7bGcVEuz+Y3XKNf5/l2AEoJp8Pp1NRimrhZo/Sl7M4hx09jNzXueC10eZmy4ls7/M9pdaRFJq5TfPNdwXpT+tB4aQ19qceIieSYXAR4jUXTjbzccOuUnuaJDVt5ldVrmxPyTupVFLY9a0crUXliC9Jc5q9/zMbMY2U0kwfAQ5VrY3/Qd9shbSvVecAPS9t4qsFokxQ2Dt5A4ZOTAkZiLCgwHeb8wKtyVHeFA/4c+tljUrVhPV/Kl1uv02bPBDOWhWhTky2eT58HuxkquR3vLqGQ1NoL2FdqrDPKbnpyXAPY2yGAx9/6qgu5AjAPqtHCoXf9UgIbL3cRie42IJj6bwB+kLZ7CiEArwYzrDIOEJ7NMs9Uba/cE2HcM+9P/mOgOdm5iomZ7vu7wb9U9v3LKK0/u3VwjDtj1letDCQNAmkBa+YoQKUZEu6JNj52LEWrWyNzRa87OWPupeEUDqRcWCmKXwpfkNG+FlVoFApHC/0x4zDSQ3alX9wzBhKo6DHjqMR5fBURXN99fXrmm85RRKYou7JqnH2GUhSmSLCIEAc4nhkFedbMvRM8dTQA1zXSSUQgRWlsQG/DnmiDHTBpE4zjebS3vm7x/EjzQQd5ETDOtKXaBQ=="
+            }
         }
     ]
 }
